@@ -6,6 +6,6 @@ services:
     container_name: nginx
     ports:
       - "8443:443"
-    environment:
-      - DOMAIN_NAME=arajma.42.fr
+    env_file:
+      - ".env"
     restart: unless-stopped
