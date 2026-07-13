@@ -1,0 +1,11 @@
+services:
+  nginx:
+    build:
+      context: ./requirements/nginx
+      dockerfile: Dockerfile
+    container_name: nginx
+    ports:
+      - "8443:443"
+    environment:
+      - DOMAIN_NAME=arajma.42.fr
+    restart: unless-stopped
