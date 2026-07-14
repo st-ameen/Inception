@@ -6,9 +6,9 @@ RUN apt-get update && \
     && rm -rf /var/lib/apt/lists/*
 
 RUN sed -i 's/bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/' /etc/mysql/mariadb.conf.d/50-server.cnf && \
-    mkdir -p /var/run/mysqld && \
-    chown -101:101 /var/run/mysqld && \
-    chmod 777 /var/run/mysqld
+    mkdir -p /run/mysqld && \
+    chown mysql:mysql /run/mysqld && \
+    chmod 777 /run/mysqld
 
 COPY tools/init.sh ./init.sh
 
