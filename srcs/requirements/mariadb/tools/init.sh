@@ -61,4 +61,4 @@ kill "$MYSQLD_PID"
 wait "$MYSQLD_PID" 2>/dev/null || true
 sleep 2
 
-exec mysqld --user=mysql --bind-address=0.0.0.0
+exec mysqld --user=mysql
