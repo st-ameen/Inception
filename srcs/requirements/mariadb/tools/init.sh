@@ -28,7 +28,7 @@ if [[ ! -d /var/lib/mysql/mysql ]]; then
 	mysql_install_db --user=mysql --datadir=/var/lib/mysql >/dev/null
 fi
 
-mysqld --user=mysql --bind-address=0.0.0.0 &
+mysqld --user=mysql &
 MYSQLD_PID=$!
 
 for _ in {1..30}; do
